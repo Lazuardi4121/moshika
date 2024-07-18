@@ -28,14 +28,9 @@ $rowContact = mysqli_fetch_assoc($queryContact);
 <!-- Start Contact Form -->
 <div class="untree_co-section">
 	<div class="container">
-
 		<div class="block">
 			<div class="row justify-content-center">
-
-
 				<div class="col-md-8 col-lg-8 pb-4">
-
-
 					<div class="row mb-5">
 						<div class="col-lg-4">
 							<div class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
@@ -104,16 +99,10 @@ $rowContact = mysqli_fetch_assoc($queryContact);
 
 						<button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
 					</form>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</div>
-
-
 </div>
 </div>
 
