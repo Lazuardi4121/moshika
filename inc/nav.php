@@ -20,7 +20,7 @@
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                <li><a class="nav-link" href="admin/login.php"><img src="asset/fe/images/user.svg"></a></li>
+                <li><a class="nav-link" href="?pg=login-member"><img src="asset/fe/images/user.svg"></a></li>
                 <li><a class="nav-link" href="?pg=cart"><img src="asset/fe/images/cart.svg"></a></li>
             </ul>
         </div>

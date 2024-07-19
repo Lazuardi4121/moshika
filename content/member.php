@@ -48,7 +48,7 @@ if (isset($_POST['simpan'])) {
                             <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
                         </div> -->
 
-                        <button type="submit" name="simpan" class="btn btn-primary-hover-outline">Send Message</button>
+                        <button type="submit" name="simpan" class="btn btn-primary-hover-outline">Register</button>
                     </form>
                 </div>
             </div>
