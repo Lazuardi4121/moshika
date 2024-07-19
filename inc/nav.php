@@ -1,7 +1,19 @@
+<?php
+include 'admin/function/get_data.php';
+
+$id_member = $_SESSION['id_member'];
+$query = mysqli_query($koneksi, "SELECT * FROM member");
+$data = mysqli_fetch_assoc($query);
+
+// $member = $getData($koneksi, $id_member);
+// print_r($_SESSION);
+// die;
+?>
+
 <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
     <div class="container">
-        <a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+        <a class="navbar-brand" href="index.php">Furni<span>.</span></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,7 +32,8 @@
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                <li><a class="nav-link" href="?pg=login-member"><img src="asset/fe/images/user.svg"></a></li>
+                <li><a class="nav-link" href="?pg=login-member"><img src="asset/fe/images/user.svg">
+                        <?= $data['nama_lengkap'] ?> </a></li>
                 <li><a class="nav-link" href="?pg=cart"><img src="asset/fe/images/cart.svg"></a></li>
             </ul>
         </div>

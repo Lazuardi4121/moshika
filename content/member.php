@@ -2,18 +2,19 @@
 // print_r($_SESSION);
 // die;
 if (isset($_POST['simpan'])) {
-    $nama_lengkap =  $_POST['nama_lengkap'];
-    $email =  $_POST['email'];
-    $password =  $_POST['password'];
-    $alamat =  $_POST['alamat'];
+    $email = htmlspecialchars($_POST['email']);
+    $password = ($_POST['password']);
 
-    $insertMember = mysqli_query($koneksi, "INSERT INTO member (nama_lengkap, email, password, alamat) 
-    VALUES ('$nama_lengkap','$email','$password','$alamat')");
+    $query = mysqli_query($koneksi, "SELECT * FROM member WHERE user.email = '$email'");
 
-    if ($insertMember) {
-        $_SESSION['id_member'] = mysqli_insert_id($koneksi);
-        $_SESSION['id_session'] = session_id();
-        header("location:?pg=member&tambah-berhasil");
+    if (mysqli_num_rows($query) > 0) {
+
+        $dataUser = mysqli_fetch_assoc($query);
+        if ($dataUser['password'] == $password) {
+            $_SESSION['id_member'] = $dataUser['id'];
+            $_SESSION['id_session'] = session_start();
+            header('Location: index.php');
+        }
     }
 }
 ?>
