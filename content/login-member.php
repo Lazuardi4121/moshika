@@ -24,26 +24,29 @@ if (isset($_POST['login'])) {
         <div class="block">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-8 pb-4">
-                    <form method="post">
+                    <?php if (!isset($_SESSION['id_member'])) : ?>
+                        Selamat Datangan di Website Ecommerce
+                    <?php else : ?>
 
+                        <form method="post">
+                            <div class="form-group">
+                                <label class="text-black" for="lname">Email :</label>
+                                <input name="email" type="email" class="form-control" id="email">
+                            </div>
 
-                        <div class="form-group">
-                            <label class="text-black" for="lname">Email :</label>
-                            <input name="email" type="email" class="form-control" id="email">
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label class="text-black" for="">Password :</label>
-                            <input type="password" class="form-control" name="password" id="">
-                        </div>
-                        <!-- 
+                            <div class="form-group mb-3">
+                                <label class="text-black" for="">Password :</label>
+                                <input type="password" class="form-control" name="password" id="">
+                            </div>
+                            <!-- 
                         <div class="form-group mb-5">
                             <label class="text-black" for="message">Message</label>
                             <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
                         </div> -->
 
-                        <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
-                    </form>
+                            <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
+                        </form>
+                    <?php endif  ?>
                 </div>
             </div>
         </div>

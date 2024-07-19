@@ -6,5 +6,5 @@ if (!isset($_SESSION['id_member'])) {
 } else {
     $id_member = $_SESSION['id_member'];
     $penjualan = mysqli_query($koneksi, "INSERT INTO penjualan 
-    (id_member, status) VALUES ('$id_member','$status')");
+    (id_member, status) VALUES ('$id_member', 0)");
 }
